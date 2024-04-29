@@ -1,14 +1,14 @@
-package com.movie.demo.member.service;
+package com.gatchaPedia.demo.member.service;
 
 
-import com.movie.demo.member.entity.Member;
-import com.movie.demo.member.exception.MemberUsernameNotExistException;
-import com.movie.demo.member.exception.PasswordMisMatchException;
-import com.movie.demo.member.repository.MemberRepository;
-import com.movie.demo.member.request.LoginRequest;
-import com.movie.demo.member.request.SignUpRequest;
-import com.movie.demo.member.response.LoginResponse;
-import com.movie.demo.member.response.SignUpResponse;
+import com.gatchaPedia.demo.member.entity.Member;
+import com.gatchaPedia.demo.member.exception.MemberUsernameNotExistException;
+import com.gatchaPedia.demo.member.exception.PasswordMisMatchException;
+import com.gatchaPedia.demo.member.repository.MemberRepository;
+import com.gatchaPedia.demo.member.request.LoginRequest;
+import com.gatchaPedia.demo.member.request.SignUpRequest;
+import com.gatchaPedia.demo.member.response.LoginResponse;
+import com.gatchaPedia.demo.member.response.SignUpResponse;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;

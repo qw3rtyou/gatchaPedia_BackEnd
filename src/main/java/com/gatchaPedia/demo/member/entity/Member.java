@@ -1,4 +1,4 @@
-package com.movie.demo.member.entity;
+package com.gatchaPedia.demo.member.entity;
 
 
 import jakarta.persistence.*;

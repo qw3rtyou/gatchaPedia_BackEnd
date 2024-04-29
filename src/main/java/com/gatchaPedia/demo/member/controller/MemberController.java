@@ -1,11 +1,11 @@
-package com.movie.demo.member.controller;
+package com.gatchaPedia.demo.member.controller;
 
 
-import com.movie.demo.member.request.LoginRequest;
-import com.movie.demo.member.request.SignUpRequest;
-import com.movie.demo.member.response.LoginResponse;
-import com.movie.demo.member.response.SignUpResponse;
-import com.movie.demo.member.service.MemberService;
+import com.gatchaPedia.demo.member.request.LoginRequest;
+import com.gatchaPedia.demo.member.request.SignUpRequest;
+import com.gatchaPedia.demo.member.response.LoginResponse;
+import com.gatchaPedia.demo.member.response.SignUpResponse;
+import com.gatchaPedia.demo.member.service.MemberService;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;

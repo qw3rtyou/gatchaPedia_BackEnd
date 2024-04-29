@@ -1,4 +1,4 @@
-package com.movie.demo.member.request;
+package com.gatchaPedia.demo.member.request;
 
 
 import lombok.AllArgsConstructor;

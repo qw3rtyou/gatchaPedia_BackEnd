@@ -1,4 +1,4 @@
-package com.movie.demo.member.exception;
+package com.gatchaPedia.demo.member.exception;
 
 public class PasswordMisMatchException extends RuntimeException{
 }
