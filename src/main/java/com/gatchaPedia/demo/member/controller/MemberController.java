@@ -1,6 +1,5 @@
 package com.gatchaPedia.demo.member.controller;
 
-
 import com.gatchaPedia.demo.member.request.LoginRequest;
 import com.gatchaPedia.demo.member.request.SignUpRequest;
 import com.gatchaPedia.demo.member.response.LoginResponse;
@@ -24,6 +23,8 @@ public class MemberController {
 
         return memberService.signup(signUpRequest);
     }
+
+
 
 
     @PostMapping("/login")

@@ -2,8 +2,7 @@ package com.gatchaPedia.demo.member.service;
 
 
 import com.gatchaPedia.demo.member.entity.Member;
-import com.gatchaPedia.demo.member.exception.MemberUsernameNotExistException;
-import com.gatchaPedia.demo.member.exception.PasswordMisMatchException;
+import com.gatchaPedia.demo.member.exception.*;
 import com.gatchaPedia.demo.member.repository.MemberRepository;
 import com.gatchaPedia.demo.member.request.LoginRequest;
 import com.gatchaPedia.demo.member.request.SignUpRequest;
@@ -29,6 +28,17 @@ public class MemberServiceImpl implements MemberService{
     @Transactional
     public SignUpResponse signup(SignUpRequest signUpRequest) {
 
+
+        // 이미 존재하는 name으로 회원 가입을 시도 한다면
+        if(checkDuplicateName(signUpRequest.getName())) throw new MemberDuplicateByNameException();
+        // 이미 존재하는 username로 회원 가입을 시도 한다면
+        if(checkDuplicateUsername(signUpRequest.getUsername())) throw new MemberDuplicateByUsernameException();
+        // 이미 존재하는 email로 회원 가입을 시도 한다면
+        if(checkDuplicateEmail(signUpRequest.getEmail())) throw new MemberDuplicateByEmailException();
+
+
+        // 모두 통과한 성공로직
+
         Member member = Member.builder()
                 .username(signUpRequest.getUsername())
                 .password(signUpRequest.getPassword())
@@ -40,6 +50,7 @@ public class MemberServiceImpl implements MemberService{
 
         return new SignUpResponse(true,"회원가입이 성공적으로 완료되었습니다.",member.getId());
     }
+
 
 
     @Override
@@ -67,4 +78,20 @@ public class MemberServiceImpl implements MemberService{
         return new LoginResponse(true, "로그인 성공", realMember.getId());
     }
 
+
+
+
+
+
+    private boolean checkDuplicateName(String name){
+        return memberRepository.existsByName(name);
+    }
+
+    private boolean checkDuplicateUsername(String username){
+        return memberRepository.existsByUsername(username);
+    }
+
+    private boolean checkDuplicateEmail(String email){
+        return memberRepository.existsByEmail(email);
+    }
 }

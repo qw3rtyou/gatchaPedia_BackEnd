@@ -9,6 +9,7 @@ import lombok.*;
 @AllArgsConstructor
 public class SignUpRequest {
 
+    @
     private String name;
 
     private String username;
@@ -16,5 +17,4 @@ public class SignUpRequest {
     private String password;
 
     private String email;
-
 }
