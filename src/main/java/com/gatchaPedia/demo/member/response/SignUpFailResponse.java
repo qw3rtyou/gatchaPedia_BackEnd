@@ -1,4 +1,4 @@
-package com.movie.demo.member.response;
+package com.gatchaPedia.demo.member.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,12 +9,9 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class LoginResponse {
+public class SignUpFailResponse {
 
     private Boolean success;
 
     private String message;
-
-    private Long memberId;
-
 }
